@@ -1,8 +1,17 @@
 const express = require("express");
 const path = require("path");
+const RateLimit = require("express-rate-limit");
 const app = express();
 const PORT = process.env.PORT || 8090;
 
+// Rate limiter: maximum 100 requests per 15 minutes per IP
+const limiter = RateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
+});
+
+// Apply rate limiter to all requests
+app.use(limiter);
 const prescriptionData = {
     clinicName: "StayHealthy", // [cite: 1]
     doctor: {
