@@ -70,7 +70,7 @@ To verify the current security status of the application, follow these steps:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/secure-app-analysis.git
+git clone https://github.com/your-username/secure-app-analysis.gitq
 cd secure-app-analysis
 ```
 
